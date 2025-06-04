@@ -1,0 +1,117 @@
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 1em Helvetica, Arial, Sans-Serif;
+}
+header {
+    background-color: #f9f9f9;
+    margin: 0 auto;
+    padding: 10px 20px;
+    max-width: 1200px;
+}
+
+nav {
+    width: 100%;
+    position: relative; /* Важно для z-index */
+    z-index: 10; /* Чтобы header был над фоновыми блоками */
+}
+nav::before,
+nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* Занимаем 50% ширины, чтобы разделить фон */
+    width: 50%;
+    z-index: 0; /* Убедимся, что псевдоэлементы находятся под .header */
+}
+
+nav::before {
+    left: 0;
+    background-color: #DA251E;
+}
+
+nav::after {
+    right: 0;
+    background-color: #291670;
+}
+.header {
+    background-color: #f9f9f9;
+    margin: 0 auto;
+    padding: 10px 20px;
+    max-width: 1200px;
+}
+.angled-button {
+    position: relative;
+    overflow: hidden;
+    padding: 5px 25px;
+    background-color: #291670;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transform: skewX(-45deg);
+    /* margin-right: 5px; */
+    border-radius: 0; /* Отключаем скругление */
+}
+.angled-button.active {
+    background-color: #DA251E;
+}
+.angled-button span {
+    display: block;
+    transform: skewX(45deg); /* Компенсируем наклон текста */
+}
+.nav-links {
+    background-color: white;
+    margin: 0 auto;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px;
+    background-color: #291670;
+    /* margin-right: 5px; */
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px auto;
+    padding: 0px 20px;
+    max-width: 1200px;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.alert {
+    background-color: #ffcccc;
+    color: #e74c3c;
+    padding: 10px;
+    border-radius: 5px;
+}
+.product-info {
+    margin-top: 20px;
+}
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-container th,
+.table-container td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.table-container th {
+    background-color: #e6e6fa;
+}
+footer {
+    background-color: #e74c3c;
+    color: white;
+    text-align: right;
+    padding: 10px;
+}
