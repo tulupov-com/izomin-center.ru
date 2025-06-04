@@ -1,45 +1,35 @@
 html, body {
     box-sizing: border-box;
     margin: 0;
-    font-family: 1em Helvetica, Arial, Sans-Serif;
 }
-header {
-    background-color: #f9f9f9;
-    margin: 0 auto;
-    padding: 10px 20px;
-    max-width: 1200px;
-}
-
-nav {
-    width: 100%;
-    position: relative; /* Важно для z-index */
-    z-index: 10; /* Чтобы header был над фоновыми блоками */
-}
-nav::before,
-nav::after {
+.header::before,
+.header::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    /* Занимаем 50% ширины, чтобы разделить фон */
-    width: 50%;
-    z-index: 0; /* Убедимся, что псевдоэлементы находятся под .header */
+    height: 100%;
+    width: 50vw;
 }
 
-nav::before {
-    left: 0;
-    background-color: #DA251E;
+.header::before {
+    left: -50vw;
+    background: red;
+    z-index: -1;
 }
 
-nav::after {
-    right: 0;
-    background-color: #291670;
+.header::after {
+    right: -50vw;
+    background: blue;
+    z-index: -1;
 }
 .header {
     background-color: #f9f9f9;
-    margin: 0 auto;
     padding: 10px 20px;
     max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 .angled-button {
     position: relative;
