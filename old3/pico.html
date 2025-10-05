@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pico Landing Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.10/css/pico.min.css">
+    <link rel="stylesheet" href="css/pico.css">
+</head>
+<body>
+    <!-- Header with logo and navigation -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzNDk4ZGIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgM0wyIDggbDEwIDUgMTAtNS0xMC01eiI+PC9wYXRoPjxwYXRoIGQ9Ik0yIDE4bDEwIDUgMTAtNSI+PC9wYXRoPjxwYXRoIGQ9Ik0yIDE0bDEwIDUgMTAtNSI+PC9wYXRoPjwvc3ZnPg==" alt="Logo">
+                    <span>Brand</span>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container">
+        <section class="hero">
+            <h1>Simple & Elegant Landing Page</h1>
+            <p>Built with Pico.css for maximum simplicity and performance</p>
+            <div class="hero-buttons">
+                <button class="contrast">Get Started</button>
+                <button>Learn More</button>
+            </div>
+        </section>
+
+        <!-- Table section -->
+        <section class="table-section">
+            <h2>Product Specifications</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Processor</td>
+                            <td>Intel Core i7-12700K</td>
+                            <td>High-performance 12-core processor for demanding tasks</td>
+                        </tr>
+                        <tr>
+                            <td>Memory</td>
+                            <td>32GB DDR5</td>
+                            <td>Fast memory with high bandwidth for multitasking</td>
+                        </tr>
+                        <tr>
+                            <td>Storage</td>
+                            <td>2TB NVMe SSD</td>
+                            <td>Ultra-fast storage with 7000MB/s read speeds</td>
+                        </tr>
+                        <tr>
+                            <td>Graphics</td>
+                            <td>NVIDIA RTX 4080</td>
+                            <td>Professional-grade GPU for gaming and creative work</td>
+                        </tr>
+                        <tr>
+                            <td>Display</td>
+                            <td>27" 4K UHD</td>
+                            <td>High-resolution display with 100% sRGB color accuracy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Features section -->
+        <section class="features">
+            <h2>Key Features</h2>
+            <div class="grid">
+                <article>
+                    <h3>Lightweight</h3>
+                    <p>Only 5KB minified and gzipped - faster loading times</p>
+                </article>
+                <article>
+                    <h3>Responsive</h3>
+                    <p>Mobile-first design that works on all devices</p>
+                </article>
+                <article>
+                    <h3>Accessible</h3>
+                    <p>Built with accessibility in mind from the start</p>
+                </article>
+                <article>
+                    <h3>Customizable</h3>
+                    <p>Easily theme with CSS variables</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container">
+        <p>&copy; 2025 Brand. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Header scroll behavior
+        const header = document.querySelector('.sticky-header');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down - hide header
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up - show header
+                header.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

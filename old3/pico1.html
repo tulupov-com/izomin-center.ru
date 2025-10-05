@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>Landing on Pico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Pico -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <!-- наши стили -->
+  <link rel="stylesheet" href="css/pico1.css">
+</head>
+<body>
+
+  <!-- Баннер -->
+  <header class="banner">
+    <div class="container grid">
+      <div></div>
+      <div class="banner-center">
+        <p class="banner-text-top">Верхняя надпись</p>
+        <img src="https://via.placeholder.com/200x80?text=LOGO" alt="Logo" class="banner-logo">
+        <p class="banner-text-bottom">Нижняя надпись</p>
+      </div>
+      <div class="address">
+        123456, г. Москва<br>ул. Пико-ЦСС, д. 2<br>офис 314
+      </div>
+    </div>
+  </header>
+
+  <!-- Навигация -->
+  <nav class="sticky-nav">
+    <div class="container nav-grid">
+      <input type="checkbox" id="menu-toggle" class="hidden">
+      <label for="menu-toggle" class="hamburger" aria-label="Открыть меню">☰</label>
+
+      <ul class="nav-list">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+
+      <img src="https://via.placeholder.com/32x32?text=L" alt="Logo" class="logo-small">
+    </div>
+  </nav>
+
+  <!-- Основное содержимое -->
+  <main class="container">
+    <section class="hero">
+      <img src="https://via.placeholder.com/600x400?text=Image" alt="">
+      <div>
+        <h2>Заголовок секции</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, totam.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Таблица</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Колонка 1</th>
+            <th>Колонка 2</th>
+            <th>Колонка 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Значение1</td>
+            <td>Значение2</td>
+            <td>Это текст может переноситься</td>
+          </tr>
+          <tr>
+            <td>Ещё значение</td>
+            <td>И ещё</td>
+            <td>Lorem ipsum dolor sit amet</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    Design by <a href="https://tulupov.com" target="_blank">tulupov.com</a>
+  </footer>
+
+  <script src="js/pico1.js"></script>
+</body>
+</html>
