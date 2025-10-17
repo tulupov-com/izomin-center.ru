@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Banner Styles */
+        .banner {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 20px 5%;
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .banner-text {
+            flex: 1;
+        }
+
+        .top-text, .bottom-text {
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        .logo {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .address-block {
+            text-align: right;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2575fc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: #2575fc;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 5%;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+        }
+
+        /* Table Styles */
+        .table-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 5%;
+            overflow-x: auto;
+        }
+
+        .responsive-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .responsive-table th {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: left;
+            padding: 18px 20px;
+            font-weight: 600;
+        }
+
+        .responsive-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .responsive-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .responsive-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Non-wrapping columns */
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-image, .hero-content {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .address-block {
+                margin-top: 15px;
+                text-align: center;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+                z-index: 200;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 21px;
+                cursor: pointer;
+            }
+
+            .bar {
+                display: block;
+                margin-top: 5px;
+                width: 100%;
+                height: 3px;
+                background-color: #333;
+                border-radius: 2px;
+                transition: 0.3s;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .top-text, .bottom-text {
+                font-size: 0.95rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner Section -->
+    <div class="banner" id="banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <div class="top-text">Welcome to our premium service</div>
+                <div class="logo">YourBrand</div>
+                <div class="bottom-text">Innovative solutions for your business</div>
+            </div>
+            <div class="address-block">
+                <div>123 Business Avenue</div>
+                <div>Suite 100, New York, NY 10001</div>
+                <div>Phone: (123) 456-7890</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">YourBrand</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business Solutions">
+        </div>
+        <div class="hero-content">
+            <h2>Transform Your Business Today</h2>
+            <p>Our innovative solutions help businesses like yours achieve remarkable growth and efficiency. With cutting-edge technology and expert support, we deliver results that exceed expectations.</p>
+            <p>Join thousands of satisfied customers who have revolutionized their operations with our platform.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <div class="table-container">
+        <table class="responsive-table">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nowrap">PRD-00123</td>
+                    <td class="nowrap">Enterprise Solution</td>
+                    <td>Complete business management platform with advanced analytics and reporting features.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">PRD-00456</td>
+                    <td class="nowrap">Cloud Storage Pro</td>
+                    <td>Secure and scalable cloud storage solution with enterprise-grade security and compliance.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">PRD-00789</td>
+                    <td class="nowrap">Marketing Suite</td>
+                    <td>All-in-one marketing automation platform with email, social media, and campaign management.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">PRD-01011</td>
+                    <td class="nowrap">Support Desk</td>
+                    <td>Comprehensive customer support solution with ticketing, knowledge base, and live chat.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Design by tulupov.com</p>
+    </footer>
+
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Sticky navigation with logo shrink
+        const banner = document.getElementById('banner');
+        const navbar = document.getElementById('navbar');
+        const navLogo = document.getElementById('nav-logo');
+        const originalLogo = document.querySelector('.logo').textContent;
+        
+        window.addEventListener('scroll', () => {
+            const bannerBottom = banner.getBoundingClientRect().bottom;
+            console.log(hamburger);
+
+            if (bannerBottom <= 0) {
+                navbar.classList.add('sticky');
+                navLogo.textContent = originalLogo.substring(0, 1); // Show only first letter
+                navLogo.style.fontSize = '1.4rem';
+            } else {
+                navbar.classList.remove('sticky');
+                navLogo.textContent = originalLogo;
+                navLogo.style.fontSize = '1.8rem';
+            }
+
+        });
+    </script>
+</body>
+</html>
